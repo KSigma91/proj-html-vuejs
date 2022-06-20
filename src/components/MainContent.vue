@@ -33,13 +33,31 @@
             </div>
         </div>
 
+        <!-- informazioni dei componenti dell'azienda -->
+        <div id="info-company" class="row d-flex justify-content-evenly align-items-center mx-auto">
+
+            <div class="info-text col-12 d-flex flex-column justify-content-around"
+            v-for="(info, index) in infoList" :key="index">
+                <div class="info-header d-flex fs-4">
+                    <font-awesome-icon :icon="info.icon" class="pe-4" />
+                    <h6>
+                        {{ info.title }}
+                    </h6>
+                </div>
+                <p class="ms-5">
+                    {{info.text }}
+                </p>
+                <a :href="info.url" class="ms-5 text-decoration-none">
+                    {{ info.add }}
+                </a>
+            </div>
+
+        </div>
+
     </div>
    
 
-    <!-- informazioni dei componenti dell'azienda -->
-    <!-- <div id="info-team">
-
-    </div> -->
+   
 
     <!-- countdown -->
     <!-- <div id="countdown">
@@ -90,12 +108,41 @@
 <script>
 export default {
     name: 'MainContent',
+    data() {
+        return {
+            infoList: [
+                {
+                    icon: "fas fa-trophy",
+                    url: "#",
+                    title: "WHO WE ARE",
+                    text: "Donec id elit non mi porta gravida at eget me tus. Sed posuere consectetur estat lobo rtis. Cum sociis natoque.",
+                    add: "Learn More"
+                },
+                {
+                    icon: "fas fa-bolt",
+                    url: "#",
+                    title: "WHAT WE DO",
+                    text: "Donec id elit non mi porta gravida at eget me tus. Sed posuere consectetur estat lobo rtis. Cum sociis natoque.",
+                    add: "Learn More"
+                },
+                {
+                    icon: "fas fa-question",
+                    url: "#",
+                    title: "WHY US?",
+                    text: "Donec id elit non mi porta gravida at eget me tus. Sed posuere consectetur estat lobo rtis. Cum sociis natoque.",
+                    add: "Learn More"
+                },
+            ]
+        }
+    }
 }
 </script>
 
 <style scoped lang="scss">
 @import "../assets/scss/Hover-Color.scss";
 $text-main-color: white;
+$text-main-color-2: #272727;
+$text-main-color-3: #878787;
 
 #call-to-action {
     width: 100%;
@@ -134,6 +181,35 @@ $text-main-color: white;
             color: $text-main-color;
             font-weight: 600;
             font-size: 15px;
+        }
+    }
+}
+
+#info-company {
+    width: 60%;
+    height: 30vh;
+
+    .info-text {
+        width: 32%;
+        height: 70%;
+        text-align: left;
+
+        .info-header {
+            color: #b3b3b3;
+
+            h6 {
+                color: $text-main-color-2;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            color: $text-main-color-3;
+        }
+
+        a {
+            color: $hover-color;
+            font-style: italic;
         }
     }
 }
