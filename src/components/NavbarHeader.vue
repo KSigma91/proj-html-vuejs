@@ -8,18 +8,20 @@
             <!-- lista menu -->
             <nav>
                 <ul class="d-flex justify-content-around align-items-baseline mt-1">
-                <!-- gli elementi della barra menu andranno ciclati -->
-                    <li class="mx-2"
-                    v-for="(menuItem, index) in listMenu" :key="index">
-                        <a href="#" class="py-2 mx-2">
+                    <!-- gli elementi della barra menu andranno ciclati -->
+                    <li class="mx-3"
+                    v-for="(menuItem, index) in listMenu" :key="index"
+                    >
+                        <a :href="menuItem.url" class="py-2">
                             {{ menuItem.text }}
                         </a>
                     </li>
-                <!-- icona di ricerca -->                  
-                    <li class="mx-2">
+
+                    <!-- icona di ricerca -->                  
+                    <li class="mx-auto">
                         <div id="search-button" class="d-flex align-items-center ms-3 mt-2">
                             <a href="#">
-                                <font-awesome-icon icon="fas fa-search" />
+                                <font-awesome-icon icon="fas fa-search" class="mx-4" />
                             </a>
                         </div> 
                     </li>                           
@@ -36,28 +38,44 @@ export default {
         return {
             listMenu: [
                 {
-                    text: "HOME"
+                    text: "HOME",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "PAGES"
+                    text: "PAGES",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "PROGRAM"
+                    text: "PROGRAM",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "TICKETS"
+                    text: "TICKETS",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "SPEAKERS"
+                    text: "SPEAKERS",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "PAPERS"
+                    text: "PAPERS",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "BLOG"
+                    text: "BLOG",
+                    url: "#",
+                    current: false
                 },
                 {
-                    text: "SHORTCODES"
+                    text: "SHORTCODES",
+                    url: "#",
+                    current: false
                 }
             ]
         }
@@ -66,45 +84,48 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../assets/scss/Hover-Color.scss";
+@import "../assets/scss/Text-Color.scss";
 $list-item: none;
 $text-list-item: none;
-$text-color: #7d7d7c;
-$hover-color: #f2291b;
 .row {
     width: 100%;
     height: 107px;
-     // debug
-    background: orange;
 
     #navbar {
-    width: 65%;
+    width: 70%;
    
-    li {
-        list-style-type: $list-item;
+        li {
+            list-style-type: $list-item;
 
-        a {
-            text-decoration: $text-list-item;
-            color: $text-color;
+            a {
+                text-decoration: $text-list-item;
+                color: $text-color;
+                font-size: 13px;
+                font-weight: 700;
+
+                &:not(#search-button):hover {
+                    border-bottom: 3px solid $hover-color;
+                    color: $hover-color;
+                }
+            }
+        }
+
+        #search-button {
+            border-left: 2px solid $text-color;
+            height: 12px;
+            padding: 0 30px;
             font-size: 13px;
-            font-weight: 700;
 
-            &:hover {
-                border-bottom: 3px solid $hover-color;
-                color: $hover-color;
+            a {
+                color: $text-color;
+
+                &:not(#search-button):hover {
+                    border-bottom: none;
+                    color: $hover-color;
+                }
             }
         }
     }
-
-    #search-button {
-        border-left: 2px solid $text-color;
-        height: 12px;
-        padding: 0 30px;
-        font-size: 13px;
-
-        a {
-            color: $text-color;
-        }
-    }
-}
 }
 </style>

@@ -5,13 +5,12 @@
       <NavbarHeader />
     </header>
 
-    <!-- jumbotron -->
-    <section>
-      
-    </section>
-
     <!-- content -->
     <main>
+      <section>
+        <!-- jumbotron -->
+        <MainContent />
+      </section>
       <!-- info team -->
       <!-- countdown -->
       <!-- team members -->
@@ -32,12 +31,13 @@
 
 <script>
 import NavbarHeader from './components/NavbarHeader.vue';
-
+import MainContent from './components/MainContent.vue';
 
 export default {
   name: 'App',
   components: {
-    NavbarHeader
+    NavbarHeader,
+    MainContent
 }
 }
 </script>
@@ -46,13 +46,13 @@ export default {
 * {
   box-sizing: border-box;
   margin: 0 !important;
-  padding: 0;
+  padding: 0 !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
 
 #app {
-  font-family: Source Sans Pro, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
