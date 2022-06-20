@@ -1,7 +1,7 @@
 <template>
     <!-- barra menu header -->
     <div class="row">
-        <div id="navbar" class="col-12 d-flex justify-content-evenly align-items-center mx-auto">
+        <div id="navbar" class="d-flex justify-content-evenly align-items-center mx-auto">
             <!-- logo -->
             <img src="../assets/img/logo.png" alt="logo_img">
 
@@ -94,6 +94,11 @@ $text-list-item: none;
 
     #navbar {
     width: 70%;
+
+        // img {
+        //     max-width: 100%;
+        //     height: 100%;
+        // }
    
         li {
             list-style-type: $list-item;
