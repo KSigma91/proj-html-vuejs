@@ -127,18 +127,84 @@
         <!-- calendario programma -->
         <div id="program-company" class="row d-flex justify-content-around align-items-center">
 
-            <div id="program-area" class="d-flex justify-content-around">
-                <div id="program-header" class="d-flex justify-content-between align-items-center">
-                    <h1>
+            <div id="program-area" class="d-flex flex-column justify-content-around">
+                <!-- introduzione -->
+                <div id="program-header" class="d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="align-self-start fw-bolder">
                         PROGRAM
                     </h1>
-                    <p>
+                    <p class="text-start">
                         This conference run through all 4 days from 23 - 26 May 2016.
                         We also provide free lunch and coffee break in each day.
                     </p>
                     <span>
                         View Full Program
                     </span>
+                </div>
+
+                <!-- rubrica -->
+                <div id="program-content" class="d-flex flex-column text-start">
+                    <!-- lista giorni appuntamento -->
+                    <div id="card-header" class="d-flex">
+                        <div class="card-day p-3"
+                        v-for="(day, index) in listCardDay" :key="index">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <h6 class="fw-bolder">
+                                            {{ day.nDay }}
+                                        </h6>
+                                        <span>
+                                            {{ day.date }}
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="meeting" class="d-flex justify-content-around align-items-center">
+                            <div id="info-meet" class="d-flex flex-column align-items-center">
+                                <ul>
+                                    <li class="p-1">
+                                        <a href="#">
+                                            <font-awesome-icon icon="fas fa-clock"  class="me-2"/>
+                                            <span>
+                                                09:00 - 10:30
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="p-1">
+                                        <a href="#">
+                                            <font-awesome-icon icon="fas fa-location-arrow" class="me-2"/>
+                                            <span>
+                                                ROOM A
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="p-1">
+                                        <a href="#">
+                                            <font-awesome-icon icon="fas fa-user" class="me-2"/>
+                                            <span>
+                                                LAURENCE FRANCIS
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        <div class="program-text d-flex flex-column justify-content-around">
+                            <h4>
+                                WELCOMING AND INTRODUCTION
+                            </h4>
+                            <p style="width: 80%">
+                                Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec
+                                ullamcorper nulla non metus auctor fringilla. Aenean lacinia bibendum nulla sed consectetur...
+                            </p>
+                            <img src="../assets/img/speaker-8-150x150.jpg" alt="speaker_img" style="width: 5%"
+                            class="rounded-1">
+                        </div>
+                    </div> 
                 </div>
             </div>
 
@@ -258,6 +324,31 @@ export default {
                     name: "ANGELINA HOLY",
                     job: "Maxii's Manager"
                 },
+            ],
+            listCardDay: [
+                {
+                    nDay: "DAY 1",
+                    date: "23 May 2016"
+                },
+                 {
+                    nDay: "DAY 2",
+                    date: "23 May 2030"
+                },
+                 {
+                    nDay: "DAY 3",
+                    date: "24 May 2030"
+                },
+                 {
+                    nDay: "DAY 4",
+                    date: "25 May 2030"
+                },
+                 {
+                    nDay: "DAY 5",
+                    date: "26 May 2030"
+                }, {
+                    nDay: "",
+                    date: ""
+                },
             ]
         }
     },
@@ -266,6 +357,7 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/scss/Hover-Color.scss";
+@import "../assets/scss/ListStyle.scss";
 $text-main-color: white;
 $text-main-color-2: #272727;
 $text-main-color-3: #878787;
@@ -421,7 +513,86 @@ $text-main-color-3: #878787;
 #program-company {
     width: 100%;
     height: 70vh;
-    //debug
-    background: orange;
+
+    #program-area {
+        width: 59%;
+
+        #program-header {
+
+            p {
+                width: 57%;
+                font-size: 15px;
+            }
+
+            span {
+                font-size: 14px;
+                color: $hover-color;
+            }
+        }
+
+        #program-content {
+            background: $hover-color;
+
+            .card-day {
+                width: 30%;     
+                border-right: 1px solid #be281a;
+                
+                &:last-child {
+                    border: 0;
+                }
+
+                &:hover {
+                    background: #be281a;
+                }
+                
+                li {
+                    list-style-type: $text-list-item;
+
+                    a {
+                        text-decoration: $list-item;
+                        color: $text-main-color;
+
+                        span {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+            #meeting {
+                height: 30vh;
+                background: #f6f6f6;
+
+                #info-meet {
+                    width: 49%;
+                    height: 22vh;
+
+                    ul {
+                        width: 70%;
+
+                        li {
+                            padding: 20px;
+                            list-style-type: $text-list-item;
+
+                            a {
+                                color: $text-main-color-3;
+                                text-decoration: $list-item;
+                                font-size: 12px;
+                                
+                                &:hover span {
+                                    color: $hover-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .program-text {
+                    height: 25vh;
+                }
+            }
+        }
+            
+    }
 }
 </style>
