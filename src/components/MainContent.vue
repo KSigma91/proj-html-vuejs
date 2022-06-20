@@ -85,22 +85,68 @@
             
         </div>
 
+        <!-- presentazione del team -->
+        <div id="team-members" class="row d-flex flex-column justify-content-center">
+            
+            <div id="team-area" class="d-flex flex-wrap mx-auto">
+                <!-- area di scroll delle immagini -->
+                <div id="navigation" class="d-flex justify-content-between align-items-center mb-5">
+                    <h2 class="fw-bold">
+                        SPEAKERS
+                    </h2>
+                
+                    <div id="change-card" class="d-flex gap-1">
+                        <button href="#" class="px-3 py-2">
+                            <font-awesome-icon icon="fas fa-angle-left" />
+                        </button>
+                        <button href="#" class="px-3 py-2">
+                            <font-awesome-icon icon="fas fa-angle-right" />
+                        </button>
+                    </div>
+                </div>
+
+                <!-- lista del team -->
+                <div id="card-area" class="d-flex justify-content-between">
+                    <div class="card-team d-flex flex-column justify-content-evenly"
+                    v-for="(cards, index) in listCard" :key="index">
+                        <!-- immagine profilo -->
+                        <img :src="cards.img" :alt="cards.alt">
+                        <!-- info -->
+                        <h6 class="mt-3 fw-bolder">
+                            {{ cards.name }}
+                        </h6>
+                        <span>
+                            {{ cards.job }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- calendario programma -->
+        <div id="program-company" class="row d-flex justify-content-around align-items-center">
+
+            <div id="program-area" class="d-flex justify-content-around">
+                <div id="program-header" class="d-flex justify-content-between align-items-center">
+                    <h1>
+                        PROGRAM
+                    </h1>
+                    <p>
+                        This conference run through all 4 days from 23 - 26 May 2016.
+                        We also provide free lunch and coffee break in each day.
+                    </p>
+                    <span>
+                        View Full Program
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-   
 
-   
-
-   
-
-    <!-- presentazione del team -->
-    <!-- <div id="team-members">
-
-    </div> -->
-
-    <!-- calendario programma -->
-    <!-- <div id="program">
-
-    </div> -->
+    
 
     <!-- posizione google maps -->
     <!-- <div id="map">
@@ -186,9 +232,35 @@ export default {
                     bg: "#000",
                     transp: "0.5"
                 },
+            ],
+            listCard: [
+                {
+                    img: require("../assets/img/speaker-6.jpg"),
+                    alt: "patrick_spencer_img",
+                    name: "PATRICK SPENCER",
+                    job: "S&P Analyzer"
+                },
+                 {
+                    img: require("../assets/img/speaker-5.jpg"),
+                    alt: "janet_jones_img",
+                    name: "JANET JONES",
+                    job: "Newyork Post's GM"
+                },
+                 {
+                    img: require("../assets/img/speaker-4.jpg"),
+                    alt: "michael_dover_img",
+                    name: "MICHAEL DOVER",
+                    job: "Starbuck's CEO"
+                },
+                 {
+                    img: require("../assets/img/speaker-3.jpg"),
+                    alt: "angelina_holy_img",
+                    name: "ANGELINA HOLY",
+                    job: "Maxii's Manager"
+                },
             ]
         }
-    }
+    },
 }
 </script>
 
@@ -303,7 +375,53 @@ $text-main-color-3: #878787;
                 color: $text-main-color;
             }
         }
+    }   
+}
+
+#team-members {
+    width: 100%;
+    height: 55vh;
+    background: #f1f1f1;
+
+    #team-area {
+        width: 59%;
+        height: 40vh;
+
+            #navigation {
+                width: 100%;
+
+                #change-card {
+
+                    button {
+                        font-size: 11px;
+                        border: 0;
+                        border-radius: 3px;
+                        background: $hover-color;
+                        color: $text-main-color;
+                    }
+                }
+            }
+
+            img {
+                border-radius: 4px;
+                max-width: 100%;
+                height: 68%;
+            }
+
+            .card-team {
+
+                span {
+                    color: $text-main-color-3;
+                    font-size: 13px;
+                }
+            }
     }
-       
+}
+
+#program-company {
+    width: 100%;
+    height: 70vh;
+    //debug
+    background: orange;
 }
 </style>
