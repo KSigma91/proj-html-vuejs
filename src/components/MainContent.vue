@@ -5,7 +5,7 @@
         <div id="call-to-action" class="row d-flex flex-column justify-content-around">
 
             <!-- testo del jumbotron -->
-            <div id="jumbo-text" class="">
+            <div id="jumbo-text">
                 <h1>
                     CONFERENCE ON
                 </h1>
@@ -210,14 +210,62 @@
 
         </div>
 
+        <!-- posizione google maps -->
+        <div id="map" class="row">
+
+            <div id="map-area" class="position-relative">
+                <!-- tasselli per composizione mappa -->
+                <div class="tiles d-inline"
+                v-for="(puzzle, index) in mapPuzzle" :key="index">
+                    <img :src="puzzle.item" :alt="puzzle.alt">
+                </div>
+
+                <div class="label">
+                    <!-- visualizzazione mappa -->
+                    <div id="map-style" class="d-flex position-absolute top-0 start-0 m-3 shadow-sm">
+                        <a href="#" class="rounded-start">
+                            <h5 class="p-2 fw-bolder"
+                            style="color: #000;">
+                                Map
+                            </h5>
+                        </a>
+                        <a href="#" class="rounded-end">
+                            <h5 class="p-2 border-start border-2">
+                                Satellite
+                            </h5>
+                        </a>  
+                    </div>
+                    
+                    <div id="bottom-label" class="d-flex flex-column align-items-end position-absolute bottom-0 end-0 m-2">
+                         <!-- visualizzazione in prima persona -->
+                        <div id="street-view" class="d-flex fs-4 mb-3 m-1">
+                            <a href="#" class="px-2 rounded-1">
+                                <font-awesome-icon icon="fas fa-street-view" style="color: #fbb93e" />
+                            </a>
+                        </div>
+
+                        <!-- zoom incremento/decremento -->
+                        <div id="zoom-map" class="d-flex flex-column fs-4 mb-5 m-1">
+                            <a href="#" style="color: #5d5d5c" class="px-2 border-bottom rounded-top">
+                                <font-awesome-icon icon="fas fa-plus" />
+                            </a>
+                            <a href="#" style="color: #5d5d5c" class="px-2 rounded-bottom">
+                                <font-awesome-icon icon="fas fa-minus" />
+                            </a>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- termini d'uso -->
+            <span class="d-flex justify-content-end align-items-end mb-2 pe-1">
+                Map data &#169;2020 Google 200 m Terms of Use Report a map error
+            </span>
+        </div>
+
     </div>
 
-    
-
-    <!-- posizione google maps -->
-    <!-- <div id="map">
-
-    </div> -->
 
     <!-- info contatti -->
     <!-- <div id="location">
@@ -348,6 +396,113 @@ export default {
                 }, {
                     nDay: "",
                     date: ""
+                },
+            ],
+            mapPuzzle: [
+                {
+                    item: require("../assets/img/vt (17).png"),
+                    alt: "vt_17_img"
+                },
+                {
+                    item: require("../assets/img/vt (11).png"),
+                    alt: "vt_11_img"
+                },
+                {
+                    item: require("../assets/img/vt (1).png"),
+                    alt: "vt_1_img"
+                },
+                {
+                    item: require("../assets/img/vt (5).png"),
+                    alt: "vt_5_img"
+                },
+                {
+                    item: require("../assets/img/vt (2).png"),
+                    alt: "vt_2_img"
+                },
+                {
+                    item: require("../assets/img/vt (25).png"),
+                    alt: "vt_25_img"
+                },
+                ////////
+                {
+                    item: require("../assets/img/vt (9).png"),
+                    alt: "vt_9_img"
+                },
+                {
+                    item: require("../assets/img/vt (3).png"),
+                    alt: "vt_3_img"
+                },
+                {
+                    item: require("../assets/img/vt (6).png"),
+                    alt: "vt_6_img"
+                },
+                {
+                    item: require("../assets/img/vt (20).png"),
+                    alt: "vt_20_img"
+                },
+                {
+                    item: require("../assets/img/vt (24).png"),
+                    alt: "vt_24_img"
+                },
+                {
+                    item: require("../assets/img/vt (7).png"),
+                    alt: "vt_7_img"
+                },
+                {
+                    item: require("../assets/img/vt (8).png"),
+                    alt: "vt_8_img"
+                },
+                {
+                    item: require("../assets/img/vt (10).png"),
+                    alt: "vt_10_img"
+                },
+                {
+                    item: require("../assets/img/vt (12).png"),
+                    alt: "vt_12_img"
+                },
+                {
+                    item: require("../assets/img/vt (13).png"),
+                    alt: "vt_13_img"
+                },
+                {
+                    item: require("../assets/img/vt (14).png"),
+                    alt: "vt_14_img"
+                },
+                {
+                    item: require("../assets/img/vt (15).png"),
+                    alt: "vt_15_img"
+                },
+                {
+                    item: require("../assets/img/vt (16).png"),
+                    alt: "vt_16_img"
+                },
+                {
+                    item: require("../assets/img/vt.png"),
+                    alt: "vt_img"
+                },
+                {
+                    item: require("../assets/img/vt (18).png"),
+                    alt: "vt_18_img"
+                },
+                {
+                    item: require("../assets/img/vt (19).png"),
+                    alt: "vt_19_img"
+                },
+                {
+                    item: require("../assets/img/vt (21).png"),
+                    alt: "vt_21_img"
+                },
+                {
+                    item: require("../assets/img/vt (22).png"),
+                    alt: "vt_22_img"
+                },
+                {
+                    item: require("../assets/img/vt (23).png"),
+                    alt: "vt_23_img"
+                },
+                {
+                    item: require("../assets/img/vt (26).png"),
+                    alt: "vt_26_img"
                 },
             ]
         }
@@ -593,6 +748,37 @@ $text-main-color-3: #878787;
             }
         }
             
+    }
+}
+
+#map {
+    width: 100%;
+    height: 50vh;
+
+        img {
+            width: 10%;
+            //height: 10%;
+        }
+    
+    .label {
+
+        a {
+            text-decoration: $list-item;
+            background: $text-main-color;
+
+            h5 {
+                font-size: 18px;
+            }
+
+            &:nth-last-child(1) {
+                color: $text-main-color-3;
+            }
+        }     
+    }
+
+    span {
+        font-size: 10px;
+        font-weight: 600;
     }
 }
 </style>
