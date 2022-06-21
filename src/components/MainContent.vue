@@ -96,7 +96,8 @@
                     </h2>
                 
                     <div id="change-card" class="d-flex gap-1">
-                        <button href="#" class="px-3 py-2">
+                        <button href="#" class="px-3 py-2"
+                        @click="nextMember">
                             <font-awesome-icon icon="fas fa-angle-left" />
                         </button>
                         <button href="#" class="px-3 py-2">
@@ -357,19 +358,124 @@
             
         </div>
 
+        <!-- prezzo dei tickets -->
+        <div id="tickets" class="row d-flex justify-content-center align-items-center p-5">
+
+            <h1 class="fw-bold" style="color: #ffffff">
+                TICKETS
+            </h1>
+            
+            <div class="card-pay d-flex flex-column justify-content-center mx-3"
+            v-for="(pay, index) in payList" :key="index">
+                <!-- tipologia di ticket -->
+                <div class="header-card-pay p-4">
+                    <h5 class="fw-bold mb-1">
+                        {{ pay.type}}
+                    </h5>
+                    <h5 class="fw-bold">
+                        {{ pay.price }}
+                    </h5>
+                </div>
+
+                <!-- contenuto del ticket -->
+                <div class="content-card-pay p-4">
+                    <ul>
+                        <li class="m-3">
+                            {{ pay.feature[0].access }}
+                        </li>
+                        <li class="m-3">
+                            {{ pay.feature[0].pause }}
+                        </li>
+                        <li class="m-3">
+                            {{ pay.feature[0].lunch }}
+                        </li>
+                        <li class="m-3">
+                            {{ pay.feature[0].doc }}
+                        </li>
+                        <li class="m-3">
+                            {{ pay.feature[0].voucher }}
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- pulsante di acquisto -->
+                <div class="footer-card-pay p-3">
+                    <a href="#" class="fw-bolder">
+                        {{ pay.action }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- media -->
+        <div id="media" class="row row-cols-2 d-flex justify-content-center align-items-center gap-4">
+
+            <!-- web player -->
+            <div id="media-player">
+                <h4 class="fw-bold mb-5 text-start">
+                    PRESENTATION
+                </h4>
+
+                <div id="vimeo" class="position-relative">
+                    <img src="../assets/img/461365506.jpeg" alt="vimeo_img">
+
+                    <!-- barra di progressione e strumenti di vimeo -->
+                    <div id="play" class="position-absolute bottom-0 start-0 mb-2 ms-2 px-4 py-1 fs-4 rounded-1">
+                        <a href="#">
+                            <font-awesome-icon icon="fas fa-play" />
+                        </a>
+                    </div>
+                    
+                    <div id="vimeo-bar" class="position-absolute bottom-0 end-0 mb-2 rounded-1 p-1" style="width: 83%">
+                        <div id="buffer" >
+                            <div id="tools" class="d-flex justify-content-center align-items-center gap-2">
+                                <!-- minutaggio -->
+                                <span class="position-absolute bottom-0 start-0 mb-3 px-2">
+                                    1:01:26
+                                </span>
+                                <!-- tasto play -->
+                                <span class="py-1 me-2 border border-secondary" style="width: 300px"></span>
+                                
+                                <a href="#">
+                                    <font-awesome-icon icon="fas fa-signal" />
+                                </a>
+                                <a href="#">
+                                    <font-awesome-icon icon="fas fa-cog" />
+                                </a>
+                                <img src="../assets/img/pngegg.png" alt="vimeo_player_img"
+                                class="me-1">
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- social post -->
+            <div id="twitter" class="d-flex flex-column justify-content-around">
+                <h4 class="fw-bold mb-5 text-start">
+                    TWITTER FEED
+                </h4>
+
+                <div class="social text-start"
+                v-for="(post, index) in listPosts" :key="index">
+                    <ul>
+                        <li>
+                            <p class="d-flex mb-3">
+                                <font-awesome-icon :icon="post.icon"
+                                class="fs-4 px-3" style="color: #47b5e9" />
+                                {{ post.message }}
+                            </p>
+                            <span class="d-flex ms-5 mb-4 fst-italic">
+                                {{ post.time }}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-
-    
-
-    <!-- prezzo dei tickets -->
-    <!-- <div id="tickets">
-
-    </div> -->
-
-    <!-- media -->
-    <!-- <div id="media">
-
-    </div> -->
 
     <!-- lista degli sponsor -->
     <!-- <div id="sponsor">
@@ -382,6 +488,7 @@ export default {
     name: 'MainContent',
     data() {
         return {
+            nextMember: 0,
             infoList: [
                 {
                     icon: "fas fa-trophy",
@@ -433,29 +540,69 @@ export default {
             ],
             listCard: [
                 {
+                    id: 0,
                     img: require("../assets/img/speaker-6.jpg"),
                     alt: "patrick_spencer_img",
                     name: "PATRICK SPENCER",
-                    job: "S&P Analyzer"
+                    job: "S&P Analyzer",
+                    current: false
                 },
-                 {
+                {
+                    id: 1,
                     img: require("../assets/img/speaker-5.jpg"),
                     alt: "janet_jones_img",
                     name: "JANET JONES",
-                    job: "Newyork Post's GM"
+                    job: "Newyork Post's GM",
+                    current: false
                 },
-                 {
+                {
+                    id: 2,
                     img: require("../assets/img/speaker-4.jpg"),
                     alt: "michael_dover_img",
                     name: "MICHAEL DOVER",
-                    job: "Starbuck's CEO"
+                    job: "Starbuck's CEO",
+                    current: false
                 },
-                 {
+                {
+                    id: 3,
                     img: require("../assets/img/speaker-3.jpg"),
                     alt: "angelina_holy_img",
                     name: "ANGELINA HOLY",
-                    job: "Maxii's Manager"
+                    job: "Maxii's Manager",
+                    current: false
                 },
+                // {
+                //     id: 4,
+                //     img: require("../assets/img/speaker-1.jpg"),
+                //     alt: "patrick_miller_img",
+                //     name: "PATRICK MILLER",
+                //     job: "Programmer",
+                //     current: false
+                // },
+                // {
+                //     id: 5,
+                //     img: require("../assets/img/speaker-2.jpg"),
+                //     alt: "andrew_ryan_img",
+                //     name: "ANDREW RYAN",
+                //     job: "Manager",
+                //     current: false
+                // },
+                // {
+                //     id: 6,
+                //     img: require("../assets/img/speaker-8.jpg"),
+                //     alt: "laurence_francis_img",
+                //     name: "LAURENCE FRANCIS",
+                //     job: "Google's UI Designer",
+                //     current: false
+                // },
+                // {
+                //     id: 7,
+                //     img: require("../assets/img/speaker-7.jpg"),
+                //     alt: "russel_portman_img",
+                //     name: "RUSSEL PORTMAN",
+                //     job: "Google's CEO",
+                //     current: false
+                // },
             ],
             listCardDay: [
                 {
@@ -614,9 +761,76 @@ export default {
                     text: "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere volunate liceret: sese habere...",
                     more: "Learn More"
                 }
+            ],
+            payList: [
+                {
+                    type: "ONE DAY PASS",
+                    price: "FREE",
+                    feature: [
+                        {
+                            access: "One Day Access",
+                            pause: "Coffee Break",
+                            lunch: "Lunch(International Buffet)",
+                            doc: "Document Sheets",
+                            voucher: "50USD Voucher For Next Event"
+                        },
+                    ],
+                    action: "BOOK NOW"
+                },
+                {
+                    type: "FOUR DAY PASSES",
+                    price: "750.00 USD",
+                    feature: [
+                        {
+                            access: "Four Day Access",
+                            pause: "Coffee Break",
+                            lunch: "Lunch(International Buffet)",
+                            doc: "Document Sheets",
+                            voucher: "100USD Voucher For Next Event"
+                        },
+                    ],
+                    action: "BOOK NOW"
+                },
+                {
+                    type: "TWO DAY PASSES",
+                    price: "580.00 USD",
+                    feature: [
+                        {
+                            access: "Two Day Access",
+                            pause: "Coffee Break",
+                            lunch: "Lunch(International Buffet)",
+                            doc: "Document Sheets",
+                            voucher: "70USD Voucher For Next Event"
+                        },
+                    ],
+                    action: "BOOK NOW"
+                },
+            ],
+            listPosts: [
+                {
+                    icon: "fab fa-twitter",
+                    message: "Stand out and be vibrant with some of the best bright and bold templates on @Envato Elements. And add a splash of c...https://t.co/jFrsnzEJK7 ",
+                    time: "3 days ago"
+                },
+                {
+                    icon: "fab fa-twitter",
+                    message: "Do you need to deliver the perfect presentation or creative pitch? Sure, your ideas and plan need to be on-point, b... https://t.co/nCmvsJVDpW",
+                    time: "9 days ago"
+                },
+                {
+                    icon: "fab fa-twitter",
+                    message: "Cut yourself a piece of the BFCM sales pie with a solid marketing plan. Here are 5 ways to optimize your content fo... https://t.co/UZfKHshE0T",
+                    time: "11 days ago"
+                },
             ]
         }
     },
+    methods: {
+        nextSlide(slide) {
+            this.nextMember = slide;
+            slide++;
+        }
+    }
 }
 </script>
 
@@ -766,7 +980,8 @@ $text-main-color-3: #878787;
             }
 
             .card-team {
-
+                position: relative;
+                
                 span {
                     color: $text-main-color-3;
                     font-size: 13px;
@@ -956,5 +1171,114 @@ $text-main-color-3: #878787;
             }
         }
     }
+}
+
+#tickets {
+    width: 100%;
+    height: 74vh;
+    background: url(../assets/img/ticket-bg.jpg);
+    background-position: center;
+
+    .card-pay {
+        width: 20%;
+
+        li {
+            list-style-type: $text-list-item;
+        }
+
+        a {
+            text-decoration: $list-item;
+            color: $text-main-color;
+        }
+
+        .header-card-pay {
+            background: #e6e6e6;
+
+            h5 {
+
+                &:nth-last-of-type(1) {
+                    color: $hover-color;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .content-card-pay {
+            background: #f8f8f8;
+            color: $text-main-color-3;
+            font-style: italic;
+        }
+
+        .footer-card-pay {
+            background: $hover-color;
+            font-size: 13px;
+        }
+    }      
+}
+
+#media {
+    width: 100%;
+    height: 60vh;
+
+    #media-player {
+        width: 28%;
+
+        img {
+            max-width: 100%;
+            height: 300px;
+        }
+
+        #play {
+            background: rgba($color: #1b1b1b, $alpha: 0.9); 
+            
+            a {
+                color: $text-main-color;
+            }
+        }
+
+        #vimeo-bar {
+            background: rgba($color: #1b1b1b, $alpha: 0.9);
+            
+            a {
+                color: $text-main-color;
+
+                &:nth-child(2) {
+                    color: #5d5d5c;
+                }
+            }
+
+            #buffer {
+
+                img {
+                    max-width: 13%;
+                    height: 10%;
+                }
+
+                #tools {
+
+                    span {
+
+                        &:nth-child(1) {
+                            font-size: 11px;
+                            font-weight: 600;
+                            background: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #twitter {
+        width: 28%;
+    .social {
+        font-size: 13px;
+        color: $text-main-color-3;
+
+        li {
+            list-style-type: $text-list-item;
+        }
+    }
+}
 }
 </style>
