@@ -307,12 +307,59 @@
 
         </div>
 
+        <!-- news -->
+        <div id="news" class="row row-cols-3 d-flex justify-content-around align-items-center">
+            
+            <div id="news-area">
+                <div id="news-head" class="d-flex justify-content-between mb-5">
+                    <h3 class="fw-bold">
+                        RECENT NEWS
+                    </h3>
+                    <a href="#">
+                        <span>
+                            Read All News
+                        </span>
+                    </a>
+                </div>
+
+                <div id="content-news" class="d-flex justify-content-between align-items-center gap-5 text-start">
+                    <div class="col"
+                    v-for="(colNews, index) in newsList" :key="index">
+                        <img :src="colNews.newsImg" :alt="colNews.newsAlt"
+                        class="mb-4">
+                        <ul>
+                            <li>
+                                <h6  class="mb-2">
+                                    {{ colNews.dateComm }}
+                                </h6>
+                            </li>
+                            <li>
+                                <h5 class="mb-4 fw-bold">
+                                    {{ colNews.title }}
+                                </h5>
+                            </li>
+                            <li>
+                                <p class="mb-4">
+                                    {{ colNews.text }}
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>
+                                        {{ colNews.more }}
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
     </div>
 
-    <!-- news -->
-    <!-- <div id="news">
-
-    </div> -->
+    
 
     <!-- prezzo dei tickets -->
     <!-- <div id="tickets">
@@ -541,6 +588,32 @@ export default {
                     item: require("../assets/img/vt (26).png"),
                     alt: "vt_26_img"
                 },
+            ],
+            newsList: [
+                {
+                    newsImg: require("../assets/img/photodune-7770665-two-white-coffee-mug-with-diy-decoration-o.jpg"),
+                    newsAlt: "two_coffee_mug_img",
+                    dateComm: "03 Dec 2013 / 0 Comments",
+                    title: "SEDIAL EIUSMOD TEMPOR",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere volunate liceret: sese habere...",
+                    more: "Learn More"
+                },
+                {
+                    newsImg: require("../assets/img/photodune-8797753-multiethnic-people-with-startup-business-t.jpg"),
+                    newsAlt: "people_startup_img",
+                    dateComm: "03 Dec 2013 / 0 Comments",
+                    title: "SEDIAL EIUSMOD TEMPOR",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere volunate liceret: sese habere...",
+                    more: "Learn More"
+                },
+                {
+                    newsImg: require("../assets/img/photodune-8522811-speaker-at-business-conference-and-present.jpg"),
+                    newsAlt: "speaker_business_img",
+                    dateComm: "03 Dec 2013 / 0 Comments",
+                    title: "SEDIAL EIUSMOD TEMPOR",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere volunate liceret: sese habere...",
+                    more: "Learn More"
+                }
             ]
         }
     },
@@ -842,6 +915,46 @@ $text-main-color-3: #878787;
 
     #contact {
         font-size: 15px;
+    }
+}
+
+#news {
+    width: 100%;
+    height: 73vh;
+
+    #news-area {
+        width: 59%;
+
+        img {
+            max-width: 100%;
+        }
+
+        li {
+            list-style-type: $text-list-item;
+            text-decoration: $list-item;
+        }
+
+        a {
+            text-decoration: $list-item;
+        }
+
+        span {
+            color: $hover-color;
+            font-style: italic;
+        }
+
+        #content-news {
+            
+            h6 {
+                color: $text-main-color-3;
+                font-style: italic;
+            }
+
+            p {
+                color: $text-main-color-3;
+                font-size: 13px;
+            }
+        }
     }
 }
 </style>
