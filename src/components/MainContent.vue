@@ -253,24 +253,61 @@
                                 <font-awesome-icon icon="fas fa-minus" />
                             </a>
                         </div>
-                    </div>
-                   
+                    </div>  
                 </div>
             </div>
 
-            <!-- termini d'uso -->
-            <span class="d-flex justify-content-end align-items-end mb-2 pe-1">
+             <!-- termini d'uso -->
+            <span class="d-flex justify-content-end align-items-end pe-1">
                 Map data &#169;2020 Google 200 m Terms of Use Report a map error
             </span>
         </div>
 
+        <!-- info contatti -->
+        <div id="location" class="row d-flex flex-column justify-content-center gap-3"
+        style="color: #ffffff">
+
+            <h2 class="fw-bold mb-4">
+                LOCATION
+            </h2>
+            <h3 class="fw-bold fs-4">
+                GD BUILDING, GRAND CONFERENCE ROOM
+            </h3>
+
+            <!-- indirizzo -->
+            <div id="address">
+                <font-awesome-icon icon="fas fa-location-arrow"
+                class="me-2" />
+                <span>
+                    11 GD Building, River Mail, New york, USA 8879
+                </span>
+            </div>
+
+            <!-- link -->
+            <div id="check" class="mb-4">
+                <a href="#">
+                    Check For Accommodations Here
+                </a>
+            </div>
+
+            <!-- recapito info -->
+            <div id="contact" class="d-flex justify-content-between pt-2 mx-auto border-top border-2"
+            style="width: 24%">
+                <a href="#" style="color: #ffffff">
+                    <font-awesome-icon icon="fas fa-phone"
+                    class="me-2" />
+                    +1-112-222-3344
+                </a>
+                <a href="#" style="color: #ffffff">
+                    <font-awesome-icon icon="fas fa-envelope"
+                    class="me-2" />
+                    Contact@TheKeynoteTheme.com
+                </a>
+            </div>
+
+        </div>
+
     </div>
-
-
-    <!-- info contatti -->
-    <!-- <div id="location">
-
-    </div> -->
 
     <!-- news -->
     <!-- <div id="news">
@@ -756,7 +793,7 @@ $text-main-color-3: #878787;
     height: 50vh;
 
         img {
-            width: 10%;
+            width: 8%;
             //height: 10%;
         }
     
@@ -779,6 +816,32 @@ $text-main-color-3: #878787;
     span {
         font-size: 10px;
         font-weight: 600;
+    }
+}
+
+#location {
+    width: 100%;
+    height: 50vh;
+    background: url(../assets/img/location-bg.jpg);
+    background-position: center;
+
+    a {
+        text-decoration: $list-item;
+    }
+
+    #address {
+        font-size: 15px;
+    }
+
+    #check {
+
+        a {
+            color: $hover-color;
+        }
+    }
+
+    #contact {
+        font-size: 15px;
     }
 }
 </style>
