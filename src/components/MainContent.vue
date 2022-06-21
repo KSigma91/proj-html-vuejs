@@ -435,7 +435,7 @@
                                 </span>
                                 <!-- tasto play -->
                                 <span class="py-1 me-2 border border-secondary" style="width: 300px"></span>
-                                
+
                                 <a href="#">
                                     <font-awesome-icon icon="fas fa-signal" />
                                 </a>
@@ -475,12 +475,30 @@
 
         </div>
 
+        <!-- lista degli sponsor -->
+        <div id="sponsor" class="row d-flex flex-column justify-content-center align-items-center gap-4">
+
+            <h3 class="fs-1 fw-bold">
+                SPONSORS
+            </h3>
+            <p class="mb-5" style="width: 20%">
+                Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            </p>
+
+            <div id="sponsor-area" class="d-flex justify-content-center">
+                <div class="sponsor-card mx-4"
+                v-for="(image, index) in listSponsor" :key="index">
+                    <ul>
+                        <li>
+                            <img :src="image.img" :alt="image.alt">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
     </div>
-
-    <!-- lista degli sponsor -->
-    <!-- <div id="sponsor">
-
-    </div> -->
 </template>
 
 <script>
@@ -821,6 +839,32 @@ export default {
                     icon: "fab fa-twitter",
                     message: "Cut yourself a piece of the BFCM sales pie with a solid marketing plan. Here are 5 ways to optimize your content fo... https://t.co/UZfKHshE0T",
                     time: "11 days ago"
+                },
+            ],
+            listSponsor: [
+                {
+                    img: require("../assets/img/banner-1.jpg"),
+                    alt: "drogler_img"
+                },
+                {
+                    img: require("../assets/img/banner-2.jpg"),
+                    alt: "lynk_sys_img"
+                },
+                {
+                    img: require("../assets/img/banner-3.jpg"),
+                    alt: "pointer_co_img"
+                },
+                {
+                    img: require("../assets/img/banner-4.jpg"),
+                    alt: "max_star_img"
+                },
+                {
+                    img: require("../assets/img/banner-5.jpg"),
+                    alt: "globe_care_img"
+                },
+                {
+                    img: require("../assets/img/banner-6.jpg"),
+                    alt: "the_shield_img"
                 },
             ]
         }
@@ -1271,14 +1315,35 @@ $text-main-color-3: #878787;
 
     #twitter {
         width: 28%;
-    .social {
-        font-size: 13px;
-        color: $text-main-color-3;
+        .social {
+            font-size: 13px;
+            color: $text-main-color-3;
 
-        li {
-            list-style-type: $text-list-item;
+            li {
+                list-style-type: $text-list-item;
+            }
         }
     }
 }
+
+#sponsor {
+    width: 100%;
+    height: 52vh;
+    background: #f5f5f5;
+
+    p {
+        color: $text-main-color-3;
+        font-size: 14px;
+    }
+
+    #sponsor-area {
+        
+        .sponsor-card {
+
+            li {
+                list-style-type: $text-list-item;
+            }
+        }
+    }      
 }
 </style>
