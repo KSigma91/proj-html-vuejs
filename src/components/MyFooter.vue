@@ -165,7 +165,7 @@ export default {
 
     #footer-top {
         width: 100%;
-        height: 48vh;
+        height: 39vh;
         background: #272727;
 
         h6 {
@@ -196,7 +196,7 @@ export default {
                 a {
                     text-decoration: $list-item;
                     color: #878787;
-                    font-size: 13px;
+                    font-size: 11px;
                 }
             }
         }
