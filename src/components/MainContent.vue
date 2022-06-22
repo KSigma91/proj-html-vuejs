@@ -138,9 +138,9 @@
                         This conference run through all 4 days from 23 - 26 May 2016.
                         We also provide free lunch and coffee break in each day.
                     </p>
-                    <span>
+                    <a href="#">
                         View Full Program
-                    </span>
+                    </a>
                 </div>
 
                 <!-- rubrica -->
@@ -239,19 +239,19 @@
                     
                     <div id="bottom-label" class="d-flex flex-column align-items-end position-absolute bottom-0 end-0 m-2">
                          <!-- visualizzazione in prima persona -->
-                        <div id="street-view" class="d-flex fs-4 mb-3 m-1">
+                        <div id="street-view" class="d-flex fs-4 mb-3 m-1 shadow-sm">
                             <a href="#" class="px-2 rounded-1">
-                                <font-awesome-icon icon="fas fa-street-view" style="color: #fbb93e" />
+                                <img src="../assets/img/image (4).svg" alt="street_view_img" style="width: 80%">
                             </a>
                         </div>
 
                         <!-- zoom incremento/decremento -->
-                        <div id="zoom-map" class="d-flex flex-column fs-4 mb-5 m-1">
+                        <div id="zoom-map" class="d-flex flex-column fs-4 mb-5 m-1 shadow-sm">
                             <a href="#" style="color: #5d5d5c" class="px-2 border-bottom rounded-top">
-                                <font-awesome-icon icon="fas fa-plus" />
+                                <img src="../assets/img/image (7).svg" alt="increment_img" style="width: 100%">
                             </a>
                             <a href="#" style="color: #5d5d5c" class="px-2 rounded-bottom">
-                                <font-awesome-icon icon="fas fa-minus" />
+                                <img src="../assets/img/image (8).svg" alt="reduce_img" style="width: 100%">
                             </a>
                         </div>
                     </div>  
@@ -430,7 +430,7 @@
                         <div id="buffer" >
                             <div id="tools" class="d-flex justify-content-center align-items-center gap-2">
                                 <!-- minutaggio -->
-                                <span class="position-absolute bottom-0 start-0 mb-3 px-2">
+                                <span class="position-absolute bottom-0 start-0 mb-4 px-2">
                                     1:01:26
                                 </span>
                                 <!-- tasto play -->
@@ -1048,7 +1048,9 @@ $text-main-color-3: #878787;
                 font-size: 15px;
             }
 
-            span {
+            a {
+                font-style: italic;
+                text-decoration: $list-item;
                 font-size: 14px;
                 color: $hover-color;
             }
@@ -1286,7 +1288,7 @@ $text-main-color-3: #878787;
             a {
                 color: $text-main-color;
 
-                &:nth-child(2) {
+                &:nth-child(1) {
                     color: #5d5d5c;
                 }
             }

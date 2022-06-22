@@ -7,24 +7,12 @@
 
     <!-- content -->
     <main>
-      <section>
-        <!-- jumbotron -->
         <MainContent />
-      </section>
-      <!-- info team -->
-      <!-- countdown -->
-      <!-- team members -->
-      <!-- program company-->
-      <!-- location and map -->
-      <!-- news -->
-      <!-- tickets -->
-      <!-- media -->
-      <!-- sponsor company -->
     </main>
       
     <!-- footer -->
     <footer>
-
+      <MyFooter />
     </footer>
   </div>
 </template>
@@ -32,12 +20,14 @@
 <script>
 import NavbarHeader from './components/NavbarHeader.vue';
 import MainContent from './components/MainContent.vue';
+import MyFooter from './components/MyFooter.vue';
 
 export default {
   name: 'App',
   components: {
     NavbarHeader,
-    MainContent
+    MainContent,
+    MyFooter
 }
 }
 </script>
