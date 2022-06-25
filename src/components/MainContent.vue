@@ -58,7 +58,7 @@
 
             <!-- tessere con il countdown -->
             <div id="content-card" class="d-flex flex-column justify-content-around">
-                <div class="card-area d-flex justify-content-center">
+                <div class="card-area d-flex justify-content-center align-items-center">
                     <div class="card py-4 px-5 mx-2"
                     v-for="(numb, index) in countNumb" :key="index" :style="`background: ${numb.bg}; opacity: ${numb.transp}`">
                         <h1>
@@ -214,12 +214,17 @@
         <!-- posizione google maps -->
         <div id="map" class="row">
 
-            <div id="map-area" class="position-relative">
+            <div id="map-area" class="d-flex flex-wrap justify-content-center position-relative mb-2">
                 <!-- tasselli per composizione mappa -->
-                <div class="tiles d-inline"
+                <div class="tiles"
                 v-for="(puzzle, index) in mapPuzzle" :key="index">
-                    <img :src="puzzle.item" :alt="puzzle.alt">
+                    <img :src="puzzle.item" :alt="puzzle.alt" class="d-flex">
                 </div>
+
+                <!-- termini d'uso -->
+                <span class="position-absolute bottom-0 end-0 pe-2">
+                    Map data &#169;2020 Google 200 m Terms of Use Report a map error
+                </span>
 
                 <div class="label">
                     <!-- visualizzazione mappa -->
@@ -258,10 +263,7 @@
                 </div>
             </div>
 
-             <!-- termini d'uso -->
-            <span class="d-flex justify-content-end align-items-end pe-1">
-                Map data &#169;2020 Google 200 m Terms of Use Report a map error
-            </span>
+             
         </div>
 
         <!-- info contatti -->
@@ -484,7 +486,7 @@
             <p class="mb-5" style="width: 20%">
                 Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit.
             </p>
-
+            
             <div id="sponsor-area" class="d-flex justify-content-center">
                 <div class="sponsor-card mx-4"
                 v-for="(image, index) in listSponsor" :key="index">
@@ -665,94 +667,96 @@ export default {
                     alt: "vt_5_img"
                 },
                 {
-                    item: require("../assets/img/vt (2).png"),
-                    alt: "vt_2_img"
+                    item: require("../assets/img/vt (4).png"),
+                    alt: "vt_4_img"
                 },
-                {
-                    item: require("../assets/img/vt (25).png"),
-                    alt: "vt_25_img"
-                },
-                ////////
                 {
                     item: require("../assets/img/vt (9).png"),
                     alt: "vt_9_img"
-                },
-                {
-                    item: require("../assets/img/vt (3).png"),
-                    alt: "vt_3_img"
-                },
-                {
-                    item: require("../assets/img/vt (6).png"),
-                    alt: "vt_6_img"
                 },
                 {
                     item: require("../assets/img/vt (20).png"),
                     alt: "vt_20_img"
                 },
                 {
-                    item: require("../assets/img/vt (24).png"),
-                    alt: "vt_24_img"
-                },
-                {
-                    item: require("../assets/img/vt (7).png"),
-                    alt: "vt_7_img"
-                },
-                {
-                    item: require("../assets/img/vt (8).png"),
-                    alt: "vt_8_img"
-                },
-                {
-                    item: require("../assets/img/vt (10).png"),
-                    alt: "vt_10_img"
+                    item: require("../assets/img/vt (13).png"),
+                    alt: "vt_13_img"
                 },
                 {
                     item: require("../assets/img/vt (12).png"),
                     alt: "vt_12_img"
                 },
                 {
-                    item: require("../assets/img/vt (13).png"),
-                    alt: "vt_13_img"
-                },
-                {
-                    item: require("../assets/img/vt (14).png"),
-                    alt: "vt_14_img"
-                },
-                {
-                    item: require("../assets/img/vt (15).png"),
-                    alt: "vt_15_img"
-                },
-                {
-                    item: require("../assets/img/vt (16).png"),
-                    alt: "vt_16_img"
+                    item: require("../assets/img/vt (2).png"),
+                    alt: "vt_2_img"
                 },
                 {
                     item: require("../assets/img/vt.png"),
                     alt: "vt_img"
                 },
                 {
+                    item: require("../assets/img/vt (3).png"),
+                    alt: "vt_3_img"
+                },
+                {
+                    item: require("../assets/img/vt (15).png"),
+                    alt: "vt_15_img"
+                },
+                {
                     item: require("../assets/img/vt (18).png"),
                     alt: "vt_18_img"
                 },
-                {
-                    item: require("../assets/img/vt (19).png"),
-                    alt: "vt_19_img"
-                },
-                {
-                    item: require("../assets/img/vt (21).png"),
-                    alt: "vt_21_img"
-                },
-                {
-                    item: require("../assets/img/vt (22).png"),
-                    alt: "vt_22_img"
-                },
-                {
-                    item: require("../assets/img/vt (23).png"),
-                    alt: "vt_23_img"
-                },
-                {
-                    item: require("../assets/img/vt (26).png"),
-                    alt: "vt_26_img"
-                },
+                /********* */
+                // {
+                //     item: require("../assets/img/vt (16).png"),
+                //     alt: "vt_16_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (8).png"),
+                //     alt: "vt_8_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (10).png"),
+                //     alt: "vt_10_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (6).png"),
+                //     alt: "vt_6_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (7).png"),
+                //     alt: "vt_7_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (14).png"),
+                //     alt: "vt_14_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (21).png"),
+                //     alt: "vt_21_img"
+                // },
+                //////////////
+                // {
+                //     item: require("../assets/img/vt (24).png"),
+                //     alt: "vt_24_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (19).png"),
+                //     alt: "vt_19_img"
+                // },
+                
+                // {
+                //     item: require("../assets/img/vt (22).png"),
+                //     alt: "vt_22_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (23).png"),
+                //     alt: "vt_23_img"
+                // },
+                // {
+                //     item: require("../assets/img/vt (26).png"),
+                //     alt: "vt_26_img"
+                // },
             ],
             newsList: [
                 {
@@ -1124,12 +1128,19 @@ $text-main-color-3: #878787;
 
 #map {
     width: 100%;
-    height: 50vh;
+    //height: 50vh;
 
-        img {
-            width: 8%;
-            //height: 10%;
+    #map-area {
+        
+        .tiles {
+
+            img {
+                object-fit: cover;
+                max-width: 100%;
+                height: 271px;
+            }
         }
+    }
     
     .label {
 
@@ -1148,7 +1159,7 @@ $text-main-color-3: #878787;
     }
 
     span {
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 600;
     }
 }

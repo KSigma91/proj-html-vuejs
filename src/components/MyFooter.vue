@@ -1,8 +1,8 @@
 <template>
     <!-- footer content -->
-    <div id="footer" class="row">
+    <div id="footer" class="row d-flex justify-content-between mx-auto">
         
-        <div id="footer-top" class="d-flex flex-column justify-content-start pt-5">
+        <div id="footer-top" class="d-flex flex-column justify-content-start mx-auto pt-5">
             <div class="footer-content d-flex justify-content-center gap-5">
 
                 <!-- recap presentazione azienda + social -->
@@ -79,9 +79,13 @@
                     <p class="mb-4">
                         Book for your seat before it's too rate. We provide variety of ticket options.
                     </p>
-                    <button class="p-3 px-4">
-                        CHECK OUT TICKETS!
-                    </button>
+
+                    <div id="check-tickets">
+                        <button class="p-3 px-4">
+                            CHECK OUT TICKETS!
+                        </button>
+                    </div>
+                   
                 </div>
 
                 <!-- recap galleria immagini -->
@@ -110,9 +114,9 @@
             </div>
         </div>
 
-        <div id="footer-bottom" class="d-flex align-items-center">
+        <div id="footer-bottom" class="d-flex justify-content-center align-items-center">
 
-            <div id="text-footer-bottom" class="d-flex justify-content-between mx-auto">
+            <div id="text-footer-bottom" class="d-flex justify-content-evenly">
                  <span>
                     &copy; Copyright GooLayers, All Right Reserved
                 </span>
@@ -160,17 +164,15 @@ export default {
 #footer {
     width: 100%;
     height: 47vh;
-    //debug
-    background: orange;
+    background: #272727;
 
     #footer-top {
-        width: 100%;
+        width: 90%;
         height: 39vh;
-        background: #272727;
 
         h6 {
             color: #d9d9d9;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
         }
 
@@ -180,7 +182,7 @@ export default {
         }
 
         .about {
-            width: 15%;
+            width: 12%;
 
             a {
                 color: #ffffff;
@@ -202,23 +204,26 @@ export default {
         }
 
         .seat {
-            width: 20%;
+            width: 13%;
 
-            button {
-                font-weight: 700;
-                font-size: 12px;
-                border-width: 0 0 3px 0;
-                border-color: #d92719;
-                background: $hover-color;
-                color: #ffffff;
+            #check-tickets {
+
+                button {
+                    font-weight: 700;
+                    font-size: 12px;
+                    border-width: 0 0 3px 0;
+                    border-color: #d92719;
+                    background: $hover-color;
+                    color: #ffffff;
+                }
             }
         }
 
         .gallery {
-            width: 30%;
+            width: 20%;
 
             .card-image {
-                width: 50%;
+                width: 80%;
 
                 img {
                     max-width: 100%;
@@ -229,11 +234,12 @@ export default {
     }
 
     #footer-bottom {
+        //width: 100%;
         height: calc(100% - 39vh);
         background: #171717;
 
         #text-footer-bottom {
-            width: 58%;
+            width: 80%;
             font-size: 13px;
 
             span {

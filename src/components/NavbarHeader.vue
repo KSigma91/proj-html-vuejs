@@ -7,7 +7,7 @@
 
             <!-- lista menu -->
             <nav>
-                <ul class="d-flex justify-content-around align-items-baseline mt-1">
+                <ul class="d-flex justify-content-around align-items-baseline mt-1 mx-auto col-md-8">
                     <!-- gli elementi della barra menu andranno ciclati -->
                     <li class="mx-3"
                     v-for="(menuItem, index) in listMenu" :key="index"
@@ -26,7 +26,7 @@
                         </div> 
                     </li>                           
                 </ul>    
-            </nav>     
+            </nav>        
         </div>
     </div>
 </template>
@@ -93,12 +93,11 @@ $text-list-item: none;
     height: 107px;
 
     #navbar {
-    width: 70%;
+        width: 70%;
 
-        // img {
-        //     max-width: 100%;
-        //     height: 100%;
-        // }
+        img {
+            max-width: 100%;
+        }
    
         li {
             list-style-type: $list-item;
