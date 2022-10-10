@@ -4,7 +4,6 @@
         <div id="navbar" class="d-flex justify-content-evenly align-items-center mx-auto">
             <!-- logo -->
             <img src="../assets/img/logo.png" alt="logo_img">
-
             <!-- lista menu -->
             <nav>
                 <ul class="d-flex justify-content-around align-items-baseline mt-1 mx-auto col-md-8">
@@ -16,7 +15,6 @@
                             {{ menuItem.text }}
                         </a>
                     </li>
-
                     <!-- icona di ricerca -->                  
                     <li class="mx-auto">
                         <div id="search-button" class="d-flex align-items-center ms-3 mt-2">
@@ -105,8 +103,8 @@ $text-list-item: none;
             a {
                 text-decoration: $text-list-item;
                 color: $text-color;
-                font-size: 13px;
-                font-weight: 700;
+                font-size: .7em;
+                font-weight: 600;
 
                 &:not(#search-button):hover {
                     border-bottom: 3px solid $hover-color;
@@ -119,7 +117,7 @@ $text-list-item: none;
             border-left: 2px solid $text-color;
             height: 12px;
             padding: 0 30px;
-            font-size: 13px;
+            font-size: 1.1em;
 
             a {
                 color: $text-color;

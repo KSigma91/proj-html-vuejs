@@ -1,10 +1,8 @@
 <template>
     <!-- footer content -->
     <div id="footer" class="row d-flex justify-content-between mx-auto">
-        
-        <div id="footer-top" class="d-flex flex-column justify-content-start mx-auto pt-5">
-            <div class="footer-content d-flex justify-content-center gap-5">
-
+        <div id="footer-top" class="d-flex flex-column justify-content-start align-items-start mx-auto pt-5">
+            <div class="footer-content d-flex justify-content-center gap-2 m-0">
                 <!-- recap presentazione azienda + social -->
                 <div class="about d-flex flex-column text-start">
                     <h6 class="mb-4">
@@ -13,7 +11,6 @@
                     <p class="mb-4">
                         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                     </p>
-
                     <!-- icone dei social -->
                     <a href="#" class="d-flex gap-3 fs-4">
                         <font-awesome-icon :icon="['fab', 'facebook-square']" />
@@ -24,9 +21,8 @@
                         <font-awesome-icon :icon="['fab', 'flickr']" />
                     </a>
                 </div>
-                
                 <!-- recap news -->
-                <div class="news d-flex flex-column align-items-start text-start">
+                <div class="news d-flex flex-column align-items-start text-start ps-5">
                     <ul>
                         <li>
                             <h6 class="mb-4">
@@ -70,9 +66,8 @@
                         </li>
                     </ul>
                 </div>
-
                 <!-- recap tickets -->
-                <div class="seat d-flex flex-column text-start">
+                <div class="seat d-flex flex-column text-start ps-5">
                     <h6 class="mb-4">
                         GET YOUR SEAT!
                     </h6>
@@ -87,9 +82,8 @@
                     </div>
                    
                 </div>
-
                 <!-- recap galleria immagini -->
-                <div class="gallery d-flex flex-column text-start"
+                <div class="gallery d-flex flex-column text-start ps-5"
                 v-for="(image, index) in listGallery" :key="index">
                     <h6 class="mb-4">
                         GALLERY FROM LAST YEAR
@@ -110,24 +104,16 @@
                         <img :src="image.tile12" alt="tile12">
                     </div>
                 </div>
-                
             </div>
         </div>
-
-        <div id="footer-bottom" class="d-flex justify-content-center align-items-center">
-
-            <div id="text-footer-bottom" class="d-flex justify-content-evenly">
-                 <span>
-                    &copy; Copyright GooLayers, All Right Reserved
-                </span>
-
-                <span>
-                    About Us | Accommodation | Call For Paper | Contatct Us
-                </span>
-            </div>
-
+        <div id="footer-bottom" class="d-flex justify-content-evenly align-items-center">
+            <span>
+                &copy; Copyright GooLayers, All Right Reserved
+            </span>
+            <span>
+                About Us | Accommodation | Call For Paper | Contatct Us
+            </span>
         </div>
-
     </div>   
 </template>
 
@@ -167,87 +153,89 @@ export default {
     background: #272727;
 
     #footer-top {
-        width: 90%;
+        width: 100%;
         height: 39vh;
 
-        h6 {
-            color: #d9d9d9;
-            font-size: 13px;
-            font-weight: 600;
-        }
+        .footer-content {
 
-        p {
-            color: #adadad;
-            font-size: 13px;
-        }
-
-        .about {
-            width: 12%;
-
-            a {
-                color: #ffffff;
+            h6 {
+                color: #d9d9d9;
+                font-size: 13px;
+                font-weight: 600;
             }
-        }
 
-        .news {
-            
+            p {
+                color: #adadad;
+                font-size: 13px;
+            }
 
-            li {
-                list-style-type: $text-list-item;
+            .about {
+                width: 12%;
 
                 a {
-                    text-decoration: $list-item;
-                    color: #878787;
-                    font-size: 11px;
-                }
-            }
-        }
-
-        .seat {
-            width: 13%;
-
-            #check-tickets {
-
-                button {
-                    font-weight: 700;
-                    font-size: 12px;
-                    border-width: 0 0 3px 0;
-                    border-color: #d92719;
-                    background: $hover-color;
                     color: #ffffff;
                 }
             }
-        }
 
-        .gallery {
-            width: 20%;
+            .news {
+                
 
-            .card-image {
-                width: 80%;
+                li {
+                    list-style-type: $text-list-item;
 
-                img {
-                    max-width: 100%;
-                    height: 6vh;
+                    a {
+                        text-decoration: $list-item;
+                        color: #878787;
+                        font-size: 11px;
+                    }
+                }
+            }
+
+            .seat {
+                width: 15%;
+
+                #check-tickets {
+
+                    button {
+                        font-weight: 700;
+                        font-size: 12px;
+                        border-width: 0 0 3px 0;
+                        border-color: #d92719;
+                        background: $hover-color;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .gallery {
+                width: 20%;
+
+                .card-image {
+                    width: 80%;
+
+                    img {
+                        max-width: 100%;
+                        height: 6vh;
+                    }
                 }
             }
         }
+
+        
     }
 
     #footer-bottom {
-        //width: 100%;
+        width: 100%;
+        padding: 0 350px;
         height: calc(100% - 39vh);
         background: #171717;
 
-        #text-footer-bottom {
-            width: 80%;
-            font-size: 13px;
+        span {
+            font-size: .8em;
+            color: #4d4d4a;
 
-            span {
-                color: #4d4d4a;
-
-                &:last-child {
-                    color: #6c6a6b;
-                }
+            &:last-child {
+                color: #6c6a6b;
             }
         }
     }
